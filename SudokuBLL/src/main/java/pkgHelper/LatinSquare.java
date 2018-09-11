@@ -23,15 +23,15 @@ public class LatinSquare {
 		myLatinSquare = latinSquare;
 	}
 	
-	public boolean hasDuplicates(int [] arr) {
+	public boolean hasDuplicates(int[] arr) {
 		
 		if (arr == null)
 			return false;
 		
 		Arrays.sort(arr);
 		
-		for (int i = 0; i< (arr.length - 1); i++) {
-			if (arr[i] == arr[i + 1]); {
+		for (int i = 0; i < (arr.length - 1); i++) {
+			if (arr[i] == arr[i + 1]) {
 				return true;
 			}
 		}	
@@ -95,7 +95,7 @@ public class LatinSquare {
 					(hasAllValues(getColumn(i), getColumn(0))) == false) {
 				return false;
 			}	
-			if (hasDuplicates(getRow(i)) == false || hasDuplicates(getColumn(i)) == false) {
+			if (hasDuplicates(getRow(i)) == true || hasDuplicates(getColumn(i)) == true) {
 				return false;
 			}
 		}
