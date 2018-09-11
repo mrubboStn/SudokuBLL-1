@@ -90,15 +90,12 @@ public class LatinSquare {
 	
 	public boolean isLatinSquare() {
 		
-		for (int i = 1; i < myLatinSquare.length; i++) {
+		for (int i = 0; i < myLatinSquare.length; i++) {
 			if (hasAllValues(getRow(i), getRow(0)) == false || 
 					(hasAllValues(getColumn(i), getColumn(0))) == false) {
 				return false;
 			}	
-		}
-			
-		for (int ii = 0; ii < myLatinSquare.length; ii++) {
-			if (hasDuplicates(getRow(ii)) == false || hasDuplicates(getColumn(ii)) == false) {
+			if (hasDuplicates(getRow(i)) == false || hasDuplicates(getColumn(i)) == false) {
 				return false;
 			}
 		}
