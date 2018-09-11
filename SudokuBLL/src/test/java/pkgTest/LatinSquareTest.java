@@ -19,6 +19,9 @@ public class LatinSquareTest {
 		assertTrue(ls.ContainsZero());
 		assertEquals(true, ls.ContainsZero());
 		
+		mySquare[2][2] = 0;
+		assertTrue(ls.ContainsZero());
+		
 	}
 	
 	@Test

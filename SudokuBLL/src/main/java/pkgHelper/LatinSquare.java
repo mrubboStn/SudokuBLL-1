@@ -38,7 +38,7 @@ public class LatinSquare {
 		return false;
 	}
 	
-	public boolean doesElementExist(int[] arr,int iValue) {
+	public boolean doesElementExist(int[] arr, int iValue) {
 		
 		for (int i = 0 ; i < arr.length ; i++) {
 			if (arr[i] == iValue) {
@@ -90,10 +90,19 @@ public class LatinSquare {
 	
 	public boolean isLatinSquare() {
 		
-		int[] sourceArray;
-		for (int i = 0; i < myLatinSquare.length; i++) {
-			
+		for (int i = 1; i < myLatinSquare.length; i++) {
+			if (hasAllValues(getRow(i), getRow(0)) == false || 
+					(hasAllValues(getColumn(i), getColumn(0))) == false) {
+				return false;
+			}	
 		}
-		
+			
+		for (int ii = 0; ii < myLatinSquare.length; ii++) {
+			if (hasDuplicates(getRow(ii)) == false || hasDuplicates(getColumn(ii)) == false) {
+				return false;
+			}
+		}
+		return true;		
 	}
 }
+
