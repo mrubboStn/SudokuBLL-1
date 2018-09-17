@@ -128,4 +128,28 @@ public class LatinSquareTest {
 		
 		assertTrue(largeLS.isLatinSquare());
 	}
+	
+	@Test
+	public void setLatinSquare_Test() {
+		
+		//This also should double as a test for getLatinSquare due to the method's call in the assertArrayEquals
+		
+		int[][] mySquare = {{1,2,3}, {2,3,1}, {3,1,2}};
+		LatinSquare ls = new LatinSquare(mySquare);
+		
+		int[][] newSquare = {{3,1,2}, {2,3,1}, {1,2,3}};
+		ls.setLatinSquare(newSquare);
+		
+		assertArrayEquals(ls.getLatinSquare(), newSquare);
+		
+		int[][] largeSquare = {{1,1,1,1}, {2,2,2,2}, {3,3,3,3}, {4,4,4,4}};
+		ls.setLatinSquare(largeSquare);
+		
+		assertArrayEquals(ls.getLatinSquare(), largeSquare);
+		
+		int[][] smallSquare = {{1,2}, {3,4}};
+		ls.setLatinSquare(smallSquare);
+		
+		assertArrayEquals(ls.getLatinSquare(), smallSquare);
+	}
 }
