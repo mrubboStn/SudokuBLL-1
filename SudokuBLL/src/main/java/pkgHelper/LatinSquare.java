@@ -65,7 +65,6 @@ public class LatinSquare {
 		for (int i = 0; i < arr2.length; i++) {
 			if (doesElementExist(arr1, arr2[i]) == false)
 				return false;
-			
 		}
 		return true;
 	}
